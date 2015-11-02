@@ -1,4 +1,4 @@
-// import Result
+import Result
 
 /// A SignalProducer creates Signals that can produce values of type `T` and/or
 /// error out with errors of type `E`. If no errors should be possible, NoError
@@ -14,9 +14,6 @@
 /// producer may see a different version of Events. The Events may arrive in a
 /// different order between Signals, or the stream might be completely
 /// different!
-
-import Foundation
-
 public struct SignalProducer<T, E: ErrorType> {
 	public typealias ProducedSignal = Signal<T, E>
 
