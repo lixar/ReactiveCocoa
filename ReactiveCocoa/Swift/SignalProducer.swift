@@ -264,6 +264,11 @@ private struct BufferState<T, Error: ErrorType> {
 	// Appends a new value to the buffer, trimming it down to the given capacity
 	// if necessary.
 	mutating func addValue(value: T, upToCapacity capacity: Int) {
+		if capacity == 1 {
+			values = [value]
+			return
+		}
+		
 		values.append(value)
 
 		while values.count > capacity {
